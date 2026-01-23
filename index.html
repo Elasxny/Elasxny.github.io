@@ -158,7 +158,7 @@
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">1</div>
   </div>
 </div>
 <div class="sidebar-social" >
@@ -203,23 +203,30 @@
 
           <section id="main" aria-label="Main content">      <div class="post-wrapper">
   <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/22/hello-world/" aria-label="Hello World" title="Hello World"></a>
+      <a class="post-link" href="/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" aria-label="网站部署过程中遇到的问题" title="网站部署过程中遇到的问题"></a>
     <div class="post-cover left">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="Hello World" class="lazyload">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="网站部署过程中遇到的问题" class="lazyload">
     </div>
     <div class="post-info">
       <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-22</span>
-        <span><span class="icon-pencil"></span>75 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
+        <span><span class="icon-calendar"></span>2026-01-23</span>
+        <span><span class="icon-pencil"></span>371 字</span>
+        <span><span class="icon-clock"></span>2 分钟</span>
       </div>
-      <h2 class="post-title">Hello World</h2>
+      <h2 class="post-title">网站部署过程中遇到的问题</h2>
       <article class="post-article">
-          Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new &amp;quot;My New Post&amp;quot;
+          网站部署过程中遇到的问题本文记录了本人在建站过程中遇到的问题
+混淆https和SSH两种模式此网站基于Github Pages部署上传至项目有两种模式——一种是https模式，一种是SSH
+&amp;#x3D;&amp;#x3D;两种模式不可混用&amp;#x3D;&amp;#x3D;
 
-More info: Writing
-Run server1$ hexo ser
+采用https模式：需要在_config.yml修改如下
+
+1234deploy:  type: git  repo: https://github.com/&amp;lt;用户名&amp;gt;/&amp;lt;用户名&amp;gt;.github.io.git   branch: &amp;#x27;main&amp;#x27;    
+
+
+
+采用SSH模式：需要生成部署SSH密钥
+
       </article>
     </div>
   </div>
@@ -244,10 +251,10 @@ Run server1$ hexo ser
       </div>
       <div>
         <span class="icon-brush"></span>
-        75
+        371
         &nbsp;|&nbsp;
         <span class="icon-coffee"></span>
-        00:01
+        00:02
       </div>
       <div>
         <span class="icon-eye"></span>
@@ -283,7 +290,7 @@ Run server1$ hexo ser
   </div>
   <div class="sidebar-state-tag">
     <div>标签</div>
-    <div class="sidebar-state-number">0</div>
+    <div class="sidebar-state-number">1</div>
   </div>
 </div>
 <div class="sidebar-social" >
