@@ -9,7 +9,7 @@
   
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_4k4bc36ef96';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Elasxny.github.io';</script>
   <title>
-    网站部署过程中遇到的问题 | Hexo
+    蓝桥21192 | Hexo
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
@@ -17,20 +17,17 @@
     
 <link rel="stylesheet" href="/css/loader.css">
 
-    <meta name="description" content="网站部署过程中遇到的问题本文记录了本人在建站过程中遇到的问题 混淆https和SSH两种模式此网站基于Github Pages部署上传至项目有两种模式——一种是https模式，一种是SSH &#x3D;&#x3D;两种模式不可混用&#x3D;&#x3D;  采用https模式：需要在_config.yml修改如下  1234deploy:  type: git  repo: https:&#x2F;&#x2F;git">
+    <meta name="description" content="通过对字符串s进行遍历，判断当前字符是否在res中出现过，如果没有出现过，就将其加入res中；如果出现过，就将其从res中删除。   易得，res中剩余的字符就是不重复的字符，其长度就是不重复字符的个数。 代码如下 12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;    #include &amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="网站部署过程中遇到的问题">
-<meta property="og:url" content="https://elasxny.github.io/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="蓝桥21192">
+<meta property="og:url" content="https://elasxny.github.io/2026/01/28/%E8%93%9D%E6%A1%A521192/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="网站部署过程中遇到的问题本文记录了本人在建站过程中遇到的问题 混淆https和SSH两种模式此网站基于Github Pages部署上传至项目有两种模式——一种是https模式，一种是SSH &#x3D;&#x3D;两种模式不可混用&#x3D;&#x3D;  采用https模式：需要在_config.yml修改如下  1234deploy:  type: git  repo: https:&#x2F;&#x2F;git">
+<meta property="og:description" content="通过对字符串s进行遍历，判断当前字符是否在res中出现过，如果没有出现过，就将其加入res中；如果出现过，就将其从res中删除。   易得，res中剩余的字符就是不重复的字符，其长度就是不重复字符的个数。 代码如下 12345678910111213141516171819202122232425262728293031#include &lt;iostream&gt;    #include &amp;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://elasxny.github.io/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/1.png">
-<meta property="article:published_time" content="2026-01-23T02:55:55.000Z">
-<meta property="article:modified_time" content="2026-01-23T04:13:10.031Z">
+<meta property="article:published_time" content="2026-01-28T11:31:35.000Z">
+<meta property="article:modified_time" content="2026-01-28T11:50:41.560Z">
 <meta property="article:author" content="熄灭月亮陷入你">
-<meta property="article:tag" content="-博客">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://elasxny.github.io/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/1.png">
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
     <link rel="shortcut icon" href="/images/favicon.ico">
   
@@ -130,11 +127,11 @@
 <header id="header" aria-label="Site header">
         <picture>
         </picture>
-          <img  fetchpriority="high" src="/images/banner.webp" alt="网站部署过程中遇到的问题">
+          <img  fetchpriority="high" src="/images/banner.webp" alt="蓝桥21192">
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
-            <h1 data-aos="slide-up">网站部署过程中遇到的问题</h1>
+            <h1 data-aos="slide-up">蓝桥21192</h1>
           </span>
         <h2 id="subtitle-wrap" data-aos="slide-down">
         </h2>
@@ -149,7 +146,7 @@
     <div class="sidebar-wrap" data-aos="fade-up">
           <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">网站部署过程中遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E6%B7%86https%E5%92%8CSSH%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">混淆https和SSH两种模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8deploy%E9%A1%B5%E9%9D%A2%E8%BE%93%E5%85%A5%E4%BA%86%E4%B8%AA%E4%BA%BAtoken%E5%AF%BC%E8%87%B4%E8%A7%A6%E5%8F%91git%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text">在deploy页面输入了个人token导致触发git保护机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E4%B8%8A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">github上代码库的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E9%85%8D%E7%BD%AE%E5%A6%82%E4%B8%8B%E5%9B%BE%E4%B8%8D%E8%A6%81%E5%8A%A8%E4%BB%BB%E4%BD%95%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">保持配置如下图不要动任何设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B0%8F%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">其他小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99ssh-connect-to-host-github-com-port-22-Connection-refused"><span class="toc-number">2.1.</span> <span class="toc-text">报错ssh: connect to host github.com port 22: Connection refused</span></a></li></ol></li></ol>
+    
 </div>
 </div>
           <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -215,13 +212,13 @@
   </div>
 </aside>
 
-          <section id="main" aria-label="Main content"><article id="post-网站部署过程中遇到的问题" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+          <section id="main" aria-label="Main content"><article id="post-蓝桥21192" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-inner" data-aos="fade-up">
     <div class="article-meta">
       <div class="article-date">
   <span class="article-date-link icon-calendar" data-aos="zoom-in">
-    <time datetime="2026-01-23T02:55:55.000Z" itemprop="datePublished">2026-01-23</time>
-    <time style="display: none;" id="post-update-time">2026-01-23</time>
+    <time datetime="2026-01-28T11:31:35.000Z" itemprop="datePublished">2026-01-28</time>
+    <time style="display: none;" id="post-update-time">2026-01-28</time>
   </span>
 </div>
 
@@ -230,48 +227,44 @@
     <div class="hr-line"></div>
     
     <div class="e-content article-entry" itemprop="articleBody">
-        <h1 id="网站部署过程中遇到的问题"><a href="#网站部署过程中遇到的问题" class="headerlink" title="网站部署过程中遇到的问题"></a>网站部署过程中遇到的问题</h1><p>本文记录了本人在建站过程中遇到的问题</p>
-<h2 id="混淆https和SSH两种模式"><a href="#混淆https和SSH两种模式" class="headerlink" title="混淆https和SSH两种模式"></a>混淆https和SSH两种模式</h2><p>此网站基于Github Pages部署<br>上传至项目有两种模式——一种是https模式，一种是SSH</p>
-<p>&#x3D;&#x3D;两种模式不可混用&#x3D;&#x3D;</p>
-<ul>
-<li><strong>采用https模式</strong>：需要在<code>_config.yml</code>修改如下</li>
-</ul>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/&lt;用户名&gt;/&lt;用户名&gt;.github.io.git </span><br><span class="line">  branch: &#x27;main&#x27;    </span><br></pre></td></tr></table></figure>
+        <p>通过对字符串s进行遍历，判断当前字符是否在res中出现过，如果没有出现过，就将其加入res中；如果出现过，就将其从res中删除。  </p>
+<p>易得，res中剩余的字符就是不重复的字符，其长度就是不重复字符的个数。</p>
+<p>代码如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">    #include &lt;string&gt;   </span><br><span class="line">    using namespace std;</span><br><span class="line">    int n;</span><br><span class="line">    string s,res;</span><br><span class="line">    int main()</span><br><span class="line">    &#123;</span><br><span class="line">        cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line">    </span><br><span class="line">        for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">            auto pos = res.find(s[i]);</span><br><span class="line">		</span><br><span class="line">            if (pos== string::npos) &#123;</span><br><span class="line">                //no</span><br><span class="line">                res = res + s[i];</span><br><span class="line">				</span><br><span class="line">          </span><br><span class="line">            &#125;</span><br><span class="line">            else &#123;</span><br><span class="line">                //yes</span><br><span class="line">                </span><br><span class="line">                res.erase(pos,1);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">        cout &lt;&lt;  res.size() &lt;&lt; endl;</span><br><span class="line">        return 0;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
 
-<ul>
-<li><strong>采用SSH模式</strong>：需要生成部署SSH密钥</li>
-</ul>
-<p><a target="_blank" rel="noopener" href="https://infinityki.github.io/2025/08/06/Hexo-Redefine-%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">参考第三步</a></p>
-<p>并在<code>_config.yml</code>修改如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: git@github.com:&lt;用户名&gt;/&lt;用户名&gt;.github.io.git</span><br><span class="line">  branch: &#x27;main&#x27;</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="在deploy页面输入了个人token导致触发git保护机制"><a href="#在deploy页面输入了个人token导致触发git保护机制" class="headerlink" title="在deploy页面输入了个人token导致触发git保护机制"></a>在deploy页面输入了个人token导致触发git保护机制</h2><p>有些教程可能会教你在<code>deploy</code>里加上<code>token</code>项</p>
-<p>当我加上token运行以下命令时</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git push -u origin main</span><br></pre></td></tr></table></figure>
-<p>触发了<code>GITHUB PUSH PROTECTION</code>警告导致无法推送</p>
-<p>删除token后再次报错<code>你有一个未完成的合并的操作</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">error: You have not concluded your merge (MERGE_HEAD exists).</span><br><span class="line">hint: Please, commit your changes before merging.</span><br><span class="line">fatal: Exiting because of unfinished merge.</span><br></pre></td></tr></table></figure>
-<p>我在处理这个问题上花费了大把时间</p>
-<h2 id="github上代码库的配置"><a href="#github上代码库的配置" class="headerlink" title="github上代码库的配置"></a>github上代码库的配置</h2><h2 id="保持配置如下图不要动任何设置"><a href="#保持配置如下图不要动任何设置" class="headerlink" title="保持配置如下图不要动任何设置"></a>保持配置如下图<br><img src="/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/1.png"><br>不要动任何设置</h2><h1 id="其他小问题"><a href="#其他小问题" class="headerlink" title="其他小问题"></a>其他小问题</h1><h2 id="报错ssh-connect-to-host-github-com-port-22-Connection-refused"><a href="#报错ssh-connect-to-host-github-com-port-22-Connection-refused" class="headerlink" title="报错ssh: connect to host github.com port 22: Connection refused"></a>报错ssh: connect to host github.com port 22: Connection refused</h2><p>暂时关闭<code>Watt Toolkit</code>或其他科学上网工具</p>
-<p><strong>参考连接</strong><br>1.<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/">https://hexo.io/zh-cn/docs/</a><br>2.<a target="_blank" rel="noopener" href="https://d-sketon.github.io/20230707/hexo-theme-reimu-guide/">https://d-sketon.github.io/20230707/hexo-theme-reimu-guide/</a></p>
+
+<p>发现通过率90%</p>
+<p>检查得知遗漏了res为空的可能性</p>
+<p>更改如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;string&gt;   </span><br><span class="line">using namespace std;</span><br><span class="line">int n;</span><br><span class="line">string s,res;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line"></span><br><span class="line">    for (int i = 0; i &lt; n; i++) &#123;</span><br><span class="line">        auto pos = res.find(s[i]);</span><br><span class="line">		</span><br><span class="line">        if (pos== string::npos) &#123;</span><br><span class="line">            //no</span><br><span class="line">            res = res + s[i];</span><br><span class="line"></span><br><span class="line">      </span><br><span class="line">        &#125;</span><br><span class="line">        else &#123;</span><br><span class="line">            //yes</span><br><span class="line">            </span><br><span class="line">            res.erase(pos,1);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    if (res.empty()) &#123;</span><br><span class="line">        cout &lt;&lt; 1 &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    else &#123;</span><br><span class="line">        cout &lt;&lt; res.size() &lt;&lt; endl;</span><br><span class="line">    &#125;</span><br><span class="line">    return 0;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+<p>#其他解法</p>
+<p>易得：最少回文子串数量 &#x3D; 出现奇数次的字符的个数，但如果这个数为 0，则答案是 1。</p>
+<p>freq 数组用于统计字符串中每个字符出现的次数</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">using namespace std;</span><br><span class="line"></span><br><span class="line">int main() &#123;</span><br><span class="line">    int n;</span><br><span class="line">    string s;</span><br><span class="line">    cin &gt;&gt; n &gt;&gt; s;</span><br><span class="line"></span><br><span class="line">    </span><br><span class="line">    //统计每个字母在s中出现了几次</span><br><span class="line">    int freq[26] = &#123;0&#125;;</span><br><span class="line">    for (char c : s) &#123;</span><br><span class="line">        freq[c - &#x27;a&#x27;]++;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    //统计出现奇数次的字符的个数</span><br><span class="line">    int odd = 0;</span><br><span class="line">    for (int i = 0; i &lt; 26; i++) &#123;</span><br><span class="line">        if (freq[i] % 2 == 1) &#123;</span><br><span class="line">            odd++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    //判断odd是否为0</span><br><span class="line">    cout &lt;&lt; (odd == 0 ? 1 : odd) &lt;&lt; endl;</span><br><span class="line">    </span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><code>char c : s</code>意味着遍历字符串s中的每个字符c（用c来代指这个字符）</p>
+<p><code>freq[c - &#39;a&#39;]++;</code>意味着将字符c转换为对应的数组下标，然后将该下标对应的值加1<br>它将字符 ‘a’ 转换为索引 0，’b’ 转换为索引 1，以此类推。</p>
 
     </div>
     <footer class="article-footer">
       
-        <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item" data-aos="zoom-in"><a class="article-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag" title="-博客">-博客</a></li></ul>
-
+      
     </footer>
   </div>
     <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
-      <div class="article-nav-link-wrap left">
-            <img data-src="/images/banner.webp" data-sizes="auto" alt="解锁所有媒体流" class="lazyload">
-        <a href="/2026/01/24/%E8%A7%A3%E9%94%81%E6%89%80%E6%9C%89%E5%AA%92%E4%BD%93%E6%B5%81/" aria-label="前一篇: 解锁所有媒体流" title="前一篇: 解锁所有媒体流"></a>
-        <div class="article-nav-caption">前一篇</div>
-        <h3 class="article-nav-title">
-            解锁所有媒体流
-        </h3>
-      </div>
+    <div class="article-nav-link-wrap right">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="杭电2092解题思路" class="lazyload">
+      <a href="/2026/01/25/%E6%9D%AD%E7%94%B52092%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/" aria-label="后一篇: 杭电2092解题思路"  title="后一篇: 杭电2092解题思路"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+          杭电2092解题思路
+      </h3>
+    </div>
   </nav>
 
 </article>
@@ -321,7 +314,7 @@
   <div class="sidebar-wrap">
         <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
 <div class="sidebar-toc-wrapper toc-div-class" >
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-number">1.</span> <span class="toc-text">网站部署过程中遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E6%B7%86https%E5%92%8CSSH%E4%B8%A4%E7%A7%8D%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.1.</span> <span class="toc-text">混淆https和SSH两种模式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9C%A8deploy%E9%A1%B5%E9%9D%A2%E8%BE%93%E5%85%A5%E4%BA%86%E4%B8%AA%E4%BA%BAtoken%E5%AF%BC%E8%87%B4%E8%A7%A6%E5%8F%91git%E4%BF%9D%E6%8A%A4%E6%9C%BA%E5%88%B6"><span class="toc-number">1.2.</span> <span class="toc-text">在deploy页面输入了个人token导致触发git保护机制</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#github%E4%B8%8A%E4%BB%A3%E7%A0%81%E5%BA%93%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.3.</span> <span class="toc-text">github上代码库的配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BF%9D%E6%8C%81%E9%85%8D%E7%BD%AE%E5%A6%82%E4%B8%8B%E5%9B%BE%E4%B8%8D%E8%A6%81%E5%8A%A8%E4%BB%BB%E4%BD%95%E8%AE%BE%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">保持配置如下图不要动任何设置</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%B6%E4%BB%96%E5%B0%8F%E9%97%AE%E9%A2%98"><span class="toc-number">2.</span> <span class="toc-text">其他小问题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%A5%E9%94%99ssh-connect-to-host-github-com-port-22-Connection-refused"><span class="toc-number">2.1.</span> <span class="toc-text">报错ssh: connect to host github.com port 22: Connection refused</span></a></li></ol></li></ol>
+    
 </div>
 </div>
         <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
@@ -443,13 +436,13 @@
       <script data-pjax>
         window.REIMU_POST = {
           author: "熄灭月亮陷入你",
-          title: "网站部署过程中遇到的问题",
-          url: "https://elasxny.github.io/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/",
+          title: "蓝桥21192",
+          url: "https://elasxny.github.io/2026/01/28/%E8%93%9D%E6%A1%A521192/",
           excerpt: "",
           description: "",
-          stripContent: "网站部署过程中遇到的问题本文记录了本人在建站过程中遇到的问题 混淆https和SSH两种模式此网站基于Github Pages部署上传至项目有两种模式——一种是https模式，一种是SSH &amp;#x3D;&amp;#x3D;两种模式不可混用&amp;#x3D;&amp;#x3D;  采用https模式：需要在_config.yml修改如下  1234deploy:  type: git  repo: https://github.com/&amp;lt;用户名&amp;gt;/&amp;lt;用户名&amp;gt;.github.io.git   br",
-          date: "Fri Jan 23 2026 10:55:55 GMT+0800",
-          updated: "Fri Jan 23 2026 12:13:10 GMT+0800",
+          stripContent: "通过对字符串s进行遍历，判断当前字符是否在res中出现过，如果没有出现过，就将其加入res中；如果出现过，就将其从res中删除。   易得，res中剩余的字符就是不重复的字符，其长度就是不重复字符的个数。 代码如下 12345678910111213141516171819202122232425262728293031#include &amp;lt;iostream&amp;gt;    #include &amp;lt;string&amp;gt;       using namespace std;    int n;",
+          date: "Wed Jan 28 2026 19:31:35 GMT+0800",
+          updated: "Wed Jan 28 2026 19:50:41 GMT+0800",
           cover: "/images/banner.webp",
         };
       </script>
