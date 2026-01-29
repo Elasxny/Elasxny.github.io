@@ -9,7 +9,7 @@
   
   <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_4k4bc36ef96';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Elasxny.github.io';</script>
   <title>
-    Hexo
+    标签: 蓝桥 | Hexo
   </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
@@ -19,7 +19,7 @@
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="https://elasxny.github.io/index.html">
+<meta property="og:url" content="https://elasxny.github.io/tags/%E8%93%9D%E6%A1%A5/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://elasxny.github.io/images/banner.webp">
@@ -129,9 +129,10 @@
   <div id="header-outer">
     <div id="header-title">
           <span id="logo">
-            <h1 data-aos="slide-up">Hexo</h1>
+            <h1 data-aos="slide-up">标签</h1>
           </span>
         <h2 id="subtitle-wrap" data-aos="slide-down">
+            <span id="subtitle">蓝桥</span>
         </h2>
     </div>
   </div>
@@ -201,130 +202,49 @@
   </div>
 </aside>
 
-          <section id="main" aria-label="Main content">      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/29/%E8%93%9D%E6%A1%A521215/" aria-label="蓝桥21215" title="蓝桥21215"></a>
-    <div class="post-cover left">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="蓝桥21215" class="lazyload">
+          <section id="main" aria-label="Main content"><div class="archives-outer-wrap" data-aos="fade-up">
+    <div class="tag-wrap">
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E6%9D%AD%E7%94%B5/">杭电</a>
     </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-29</span>
-        <span><span class="icon-pencil"></span>95 字</span>
-        <span><span class="icon-clock"></span>1 分钟</span>
-      </div>
-      <h2 class="post-title">蓝桥21215</h2>
-      <article class="post-article">
-          求最大公因数gcd（）
-123456789int gcd(int b, int a) &amp;#123;    while (b != 0) &amp;#123;        int temp = b;        b = a % b;        a = temp;    &amp;#125;    return a;&amp;#125;
-
-
-完整代码
-123456789101112131415161718192021222324252627#include &amp;lt;iostream&amp;gt;using namespace std;int main()&amp;#123;    int res = 0;    int n =
-      </article>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/">-博客</a>
     </div>
-  </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/%E8%93%9D%E6%A1%A5/">蓝桥</a>
+    </div>
+    <div class="archives-tag-list-item" data-aos="zoom-in">
+      <a class="archives-tag-list-link" href="/tags/github%E6%8E%A8%E8%8D%90/">github推荐</a>
+    </div>
 </div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/28/%E8%93%9D%E6%A1%A521192/" aria-label="蓝桥21192" title="蓝桥21192"></a>
-    <div class="post-cover right">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="蓝桥21192" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-28</span>
-        <span><span class="icon-pencil"></span>516 字</span>
-        <span><span class="icon-clock"></span>3 分钟</span>
-      </div>
-      <h2 class="post-title">蓝桥21192</h2>
-      <article class="post-article">
-          通过对字符串s进行遍历，判断当前字符是否在res中出现过，如果没有出现过，就将其加入res中；如果出现过，就将其从res中删除。  
-易得，res中剩余的字符就是不重复的字符，其长度就是不重复字符的个数。
-代码如下
-12345678910111213141516171819202122232425262728293031#include &amp;lt;iostream&amp;gt;    #include &amp;lt;string&amp;gt;       using namespace std;    int n;    string s,res;    int main()    &amp;#123;        c
-      </article>
-    </div>
-  </div>
+<div class="category-wrap">
 </div>
-      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/25/%E6%9D%AD%E7%94%B52092%E8%A7%A3%E9%A2%98%E6%80%9D%E8%B7%AF/" aria-label="杭电2092解题思路" title="杭电2092解题思路"></a>
-    <div class="post-cover left">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="杭电2092解题思路" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-25</span>
-        <span><span class="icon-pencil"></span>604 字</span>
-        <span><span class="icon-clock"></span>4 分钟</span>
-      </div>
-      <h2 class="post-title">杭电2092解题思路</h2>
-      <article class="post-article">
-          把x表示为两个完全平方数的和，即x&amp;#x3D;a^2+b^2，其中a,b为整数。是完全平方数的和，当且仅当x为偶数，且x的平方根为整数。先判断是否为完全平方数，再判断是否为两个完全平方数的和。
-123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081#include &amp;lt;iostream&amp;gt;#include &amp;lt;vector&amp;gt;#i
-      </article>
-    </div>
+        <section class="archives-wrap" data-aos="fade-up">
+          <div class="archive-year-wrap">
+            <a href="/archives/2026" class="archive-year">2026</a>
+          </div>
+          <ul>
+            <li class="archive-article">
+  <div class="archive-article-date">
+    <span>
+      <time class="dt-published" datetime="2026-01-29T12:48:38.000Z" itemprop="datePublished">01-29</time>
+    </span>
   </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap right" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/24/%E8%A7%A3%E9%94%81%E6%89%80%E6%9C%89%E5%AA%92%E4%BD%93%E6%B5%81/" aria-label="解锁所有媒体流" title="解锁所有媒体流"></a>
-    <div class="post-cover right">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="解锁所有媒体流" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-24</span>
-        <span><span class="icon-pencil"></span>298 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">解锁所有媒体流</h2>
-      <article class="post-article">
-          &amp;#x3D;&amp;#x3D;本文意在记录个人在使用AudioVisual项目的流程&amp;#x3D;&amp;#x3D;
-&amp;#x3D;&amp;#x3D;操作系统:Windows 11&amp;#x3D;&amp;#x3D;&amp;#x3D;&amp;#x3D;Linux&amp;#x2F;MacOS 移步 issue&amp;#x3D;&amp;#x3D;
-12github项目地址https://github.com/RemotePinee/AudioVisual
+    <a class="archive-article-title" href="/2026/01/29/%E8%93%9D%E6%A1%A521215/">蓝桥21215</a>
+</li>
 
-运行前置条件：
-node.js 16.x 或更高版本
-npm 8.x 或更高版本
-git    &amp;#x2F;&amp;#x2F;克隆项目到本地
-
-安装Node.js和npm123安装node.jshttps://n
-      </article>
-    </div>
+            <li class="archive-article">
+  <div class="archive-article-date">
+    <span>
+      <time class="dt-published" datetime="2026-01-28T11:31:35.000Z" itemprop="datePublished">01-28</time>
+    </span>
   </div>
-</div>
-      <div class="post-wrapper">
-  <div class="post-wrap left" data-aos="fade-up">
-      <a class="post-link" href="/2026/01/23/%E7%BD%91%E7%AB%99%E9%83%A8%E7%BD%B2%E8%BF%87%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/" aria-label="网站部署过程中遇到的问题" title="网站部署过程中遇到的问题"></a>
-    <div class="post-cover left">
-          <img data-src="/images/banner.webp" data-sizes="auto" alt="网站部署过程中遇到的问题" class="lazyload">
-    </div>
-    <div class="post-info">
-      <div class="post-meta">
-        <span><span class="icon-calendar"></span>2026-01-23</span>
-        <span><span class="icon-pencil"></span>371 字</span>
-        <span><span class="icon-clock"></span>2 分钟</span>
-      </div>
-      <h2 class="post-title">网站部署过程中遇到的问题</h2>
-      <article class="post-article">
-          网站部署过程中遇到的问题本文记录了本人在建站过程中遇到的问题
-混淆https和SSH两种模式此网站基于Github Pages部署上传至项目有两种模式——一种是https模式，一种是SSH
-&amp;#x3D;&amp;#x3D;两种模式不可混用&amp;#x3D;&amp;#x3D;
+    <a class="archive-article-title" href="/2026/01/28/%E8%93%9D%E6%A1%A521192/">蓝桥21192</a>
+</li>
 
-采用https模式：需要在_config.yml修改如下
-
-1234deploy:  type: git  repo: https://github.com/&amp;lt;用户名&amp;gt;/&amp;lt;用户名&amp;gt;.github.io.git   branch: &amp;#x27;main&amp;#x27;    
-
-
-
-采用SSH模式：需要生成部署SSH密钥
-
-      </article>
-    </div>
+          </ul>
+        </section>
   </div>
-</div>
 
 </section>
         </div>
