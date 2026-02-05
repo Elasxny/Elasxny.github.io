@@ -1,0 +1,650 @@
+  <!DOCTYPE html>
+  <html lang="zh-CN"  
+      data-theme-mode="auto"
+  >
+  <head>
+  <meta charset="utf-8">
+  
+  
+  
+  <script>window.REIMU_CONFIG = {};window.REIMU_CONFIG.icon_font = '4552607_4k4bc36ef96';window.REIMU_CONFIG.clipboard_tips = {"success":{"zh-CN":"复制成功 (*^▽^*)"},"fail":{"zh-CN":"复制失败 (ﾟ⊿ﾟ)ﾂ"},"copyright":{"enable":false,"count":50,"license_type":"by-nc-sa"}};window.REIMU_CONFIG.clipboard_tips.copyright.content = '本博客所有文章除特别声明外，均采用 BY-NC-SA 许可协议。转载请注明出处！';window.REIMU_CONFIG.code_block = {"expand":true};window.REIMU_CONFIG.base = 'https://Elasxny.github.io';</script>
+  <title>
+    链表栈队列 | Hexo
+  </title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="preload" as="style" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Mulish:400,400italic,700,700italic|Noto Serif SC:400,400italic,700,700italic&display=swap" media="print" onload="this.media='all'">
+    <link rel="preload" href="//at.alicdn.com/t/c/font_4552607_4k4bc36ef96.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    
+<link rel="stylesheet" href="/css/loader.css">
+
+    <meta name="description" content="链表链表是一种物理存储结构上非连续存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的 。 因此无法使用下标访问链表中的元素，只能从前往后遍历链表。 单链表遍历123for (ListNode* p &#x3D; head; p !&#x3D; nullptr; p &#x3D; p-&gt;next) &#123;    std::cout &lt;&lt; p-&gt;val &lt;&lt; std::endl;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="链表栈队列">
+<meta property="og:url" content="https://elasxny.github.io/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="链表链表是一种物理存储结构上非连续存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的 。 因此无法使用下标访问链表中的元素，只能从前往后遍历链表。 单链表遍历123for (ListNode* p &#x3D; head; p !&#x3D; nullptr; p &#x3D; p-&gt;next) &#123;    std::cout &lt;&lt; p-&gt;val &lt;&lt; std::endl;">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://elasxny.github.io/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/xw_20260204225503.png">
+<meta property="og:image" content="https://elasxny.github.io/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/xw_20260204225503.png">
+<meta property="article:published_time" content="2026-01-31T08:54:52.000Z">
+<meta property="article:modified_time" content="2026-02-05T11:43:58.706Z">
+<meta property="article:author" content="熄灭月亮陷入你">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://elasxny.github.io/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/xw_20260204225503.png">
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="shortcut icon" href="/images/favicon.ico">
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  <link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.css" integrity="sha384-IfxC36XL/toUyJ939C73PcgMuRzAZuIzZxE38drsmO5p6jD7ei+Zx/1oA/0l8ysE" crossorigin="anonymous">
+    
+<script src="https://npm.webcache.cn/pace-js@1.2.4/pace.min.js" integrity="sha384-k6YtvFUEIuEFBdrLKJ3YAUbBki333tj1CSUisai5Cswsg9wcLNaPzsTHDswp4Az8" crossorigin="anonymous"></script>
+
+    
+<link rel="stylesheet" href="https://npm.webcache.cn/@reimujs/aos@0.1.2/dist/aos.css" integrity="sha384-GMRP93c6Hkz9JVKGAuRR3nTS7M07RwPgTFenXiosjq2VbVgvdDNcz1g6Mkj8AONa" crossorigin="anonymous">
+
+<meta name="generator" content="Hexo 8.1.1"></head>
+
+  <body>
+      <div id='loader'>
+    <div class="loading-left-bg loading-bg"></div>
+    <div class="loading-right-bg loading-bg"></div>
+    <div class="spinner-box">
+      <div class="loading-taichi rotate">
+          <svg width="150" height="150" viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="https://www.w3.org/2000/svg" shape-rendering="geometricPrecision">
+            <path d="M303.5 432A80 80 0 0 1 291.5 592A80 80 0 0 1 303.5 432z" fill="var(--red-1, #ff5252)" />
+            <path d="M512 65A447 447 0 0 1 512 959L512 929A417 417 0 0 0 512 95A417 417 0 0 0 512 929L512 959A447 447 0 0 1 512 65z 
+           M512 95A417 417 0 0 1 929 512A208.5 208.5 0 0 1 720.5 720.5L720.5 592A80 80 0 0 0 720.5 432A80 80 0 0 0 720.5 592L720.5 720.5A208.5 208.5 0 0 1 512 512A208.5 208.5 0 0 0 303.5 303.5A208.5 208.5 0 0 0 95 512A417 417 0 0 1 512 95z" fill="var(--red-1, #ff5252)" />
+          </svg>
+      </div>
+      <div class="loading-word">少女祈祷中...</div>
+    </div>
+  </div>
+  </div>
+  <script>
+    var time = null;
+    var loaderEl = document.getElementById('loader');
+    var startLoading = () => {
+      time = Date.now();
+      loaderEl.classList.remove("loading");
+    }
+    var hideLoader = () => {
+      document.body.style.overflow = 'auto';
+      loader.classList.add('loading');
+    };
+
+    var endLoading = () => {
+      if (!time) {
+        hideLoader();
+      } else {
+        if (Date.now() - time > 500) {
+          time = null;
+          hideLoader();
+        } else {
+          setTimeout(endLoading, 500 - (Date.now() - time));
+          time = null;
+        }
+      }
+    }
+    window.addEventListener('DOMContentLoaded', endLoading);
+    loaderEl.addEventListener('click', endLoading);
+  </script>
+<div id="copy-tooltip"></div>
+<div id="heatmap-tooltip"></div>
+
+
+    <div id="container">
+      <div id="wrap">
+        <div id="header-nav">
+  <nav id="main-nav" aria-label="Primary navigation">
+        <a class="main-nav-link-wrap" href="/">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">首页</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/archives">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">归档</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/about">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">关于</span>
+        </span>
+        <a class="main-nav-link-wrap" href="/friend">
+            <div class="main-nav-icon icon rotate">
+                &#xe62b;
+            </div>
+          <span class="main-nav-link">友链</span>
+        </span>
+    <a id="main-nav-toggle" class="nav-icon" aria-label="Toggle navigation" role="button"></a>
+  </nav>
+  <nav id="sub-nav" aria-label="Secondary navigation">
+      <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS 订阅" aria-label="RSS 订阅" target="_blank"></a>
+  </nav>
+</div>
+<header id="header" aria-label="Site header">
+        <picture>
+        </picture>
+          <img  fetchpriority="high" src="/images/banner.webp" alt="链表栈队列">
+  <div id="header-outer">
+    <div id="header-title">
+          <span id="logo">
+            <h1 data-aos="slide-up">链表栈队列</h1>
+          </span>
+        <h2 id="subtitle-wrap" data-aos="slide-down">
+        </h2>
+    </div>
+  </div>
+</header>
+
+        <div id="content" aria-label="Page content"  class="sidebar-right" >
+          <aside id="sidebar" aria-label="Sidebar">
+  <div class="sidebar-wrapper-container sticky">
+  <div class="sidebar-wrapper">
+    <div class="sidebar-wrap" data-aos="fade-up">
+          <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text">单链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%8F%92"><span class="toc-number">1.1.2.</span> <span class="toc-text">头插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%8F%92"><span class="toc-number">1.1.3.</span> <span class="toc-text">尾插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%EF%BC%9A%E5%9C%A8%E5%B0%BE%E9%83%A8%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">特殊：在尾部删除节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">双链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%8F%92-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">头插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%8F%92-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">尾插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E6%8F%92"><span class="toc-number">1.2.4.</span> <span class="toc-text">中间插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%A4%B4%E7%BB%93%E7%82%B9"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">删除头结点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">删除中间节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%B0%BE%E7%BB%93%E7%82%B9"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">删除尾结点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">栈的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E6%A0%88"><span class="toc-number">2.1.</span> <span class="toc-text">用链表实现栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%A4%B4%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text">单链表头部作为栈顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%B0%BE%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.2.</span> <span class="toc-text">双链表尾部作为栈顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%A4%B4%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.3.</span> <span class="toc-text">双链表头部作为栈顶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88"><span class="toc-number">2.2.</span> <span class="toc-text">用数组实现栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">队列介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="toc-number">3.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97%EF%BC%88%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">数组队列（循环队列）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97"><span class="toc-number">3.3.</span> <span class="toc-text">链式队列</span></a></li></ol></li></ol>
+</div>
+</div>
+          <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="熄灭月亮陷入你" class="lazyload">
+  <div class="sidebar-author-name">熄灭月亮陷入你</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+          <div class="sidebar-btn-wrapper" style="position:static">
+            <div class="sidebar-toc-btn current"></div>
+            <div class="sidebar-common-btn"></div>
+          </div>
+    </div>
+  </div>
+  <div class="sidebar-widget">
+  </div>
+  </div>
+</aside>
+
+          <section id="main" aria-label="Main content"><article id="post-9.链表栈队列" class="h-entry article" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-inner" data-aos="fade-up">
+    <div class="article-meta">
+      <div class="article-date">
+  <span class="article-date-link icon-calendar" data-aos="zoom-in">
+    <time datetime="2026-01-31T08:54:52.000Z" itemprop="datePublished">2026-01-31</time>
+    <time style="display: none;" id="post-update-time">2026-02-05</time>
+  </span>
+</div>
+
+    </div>
+    
+    <div class="hr-line"></div>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+        <h1 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h1><p>链表是一种物理存储结构上非连续存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的 。</p>
+<p>因此无法使用下标访问链表中的元素，只能从前往后遍历链表。</p>
+<h2 id="单链表"><a href="#单链表" class="headerlink" title="单链表"></a>单链表</h2><h3 id="遍历"><a href="#遍历" class="headerlink" title="遍历"></a>遍历</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (ListNode* p = head; p != nullptr; p = p-&gt;next) &#123;</span><br><span class="line">    std::cout &lt;&lt; p-&gt;val &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="头插"><a href="#头插" class="headerlink" title="头插"></a>头插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">// 创建一条单链表</span><br><span class="line">ListNode* head = createLinkedList(&#123;1, 2, 3, 4, 5&#125;);</span><br><span class="line"></span><br><span class="line">ListNode* newNode = new ListNode(0);</span><br><span class="line">newNode-&gt;next = head;</span><br><span class="line">head = newNode;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="尾插"><a href="#尾插" class="headerlink" title="尾插"></a>尾插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">// 在单链表尾部插入一个新节点 </span><br><span class="line">ListNode* p = head;</span><br><span class="line">// 先走到链表的最后一个节点</span><br><span class="line">while (p-&gt;next != nullptr) &#123;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">// 现在 p 就是链表的最后一个节点</span><br><span class="line">// 在 p 后面插入新节点</span><br><span class="line">p-&gt;next = new ListNode(xxx);     //xxx表示要插入的节点的值</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>如果需要在中间插入则需要额外步骤：</p>
+<ul>
+<li>把指针移动到要插入位置的前一个节点（前驱节点）</li>
+<li>组装新节点的后驱指针<code> newNode-&gt;next = p-&gt;next;</code></li>
+<li>组装前驱节点的后驱指针<code> p-&gt;next = newNode;</code></li>
+</ul>
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p>要找到要被删除节点的前驱节点，然后把这个前驱节点的 next 指针指向被删除节点的下一个节点</p>
+<ul>
+<li>移动到前驱节点</li>
+<li>使用<code>p-&gt;next = p-&gt;next-&gt;next;</code>删除前驱节点的后一个节点</li>
+</ul>
+<h4 id="特殊：在尾部删除节点"><a href="#特殊：在尾部删除节点" class="headerlink" title="特殊：在尾部删除节点"></a>特殊：在尾部删除节点</h4><ul>
+<li>找到倒数第二个节点 </li>
+<li>把它的 next 指针置为 null </li>
+<li>使用<code>p-&gt;next = nullptr;</code>删除最后一个节点</li>
+</ul>
+<h2 id="双链表"><a href="#双链表" class="headerlink" title="双链表"></a>双链表</h2><p>DoublyListNode* head &#x3D; createDoublyLinkedList();<br>DoublyListNode* tail &#x3D; nullptr;</p>
+<h3 id="遍历-1"><a href="#遍历-1" class="headerlink" title="遍历"></a>遍历</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 从头节点向后遍历双链表</span><br><span class="line">for (DoublyListNode* p = head; p != nullptr; p = p-&gt;next) &#123;</span><br><span class="line">    cout &lt;&lt; p-&gt;val &lt;&lt; endl;</span><br><span class="line">    tail = p;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 从尾节点向前遍历双链表</span><br><span class="line">for (DoublyListNode* p = tail; p != nullptr; p = p-&gt;prev) &#123;</span><br><span class="line">    cout &lt;&lt; p-&gt;val &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="头插-1"><a href="#头插-1" class="headerlink" title="头插"></a>头插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DoublyListNode* newHead = new DoublyListNode(xxx);</span><br><span class="line">newHead-&gt;next = head;  //更改指针</span><br><span class="line">head-&gt;prev = newHead;</span><br><span class="line">head = newHead;</span><br></pre></td></tr></table></figure>
+
+<h3 id="尾插-1"><a href="#尾插-1" class="headerlink" title="尾插"></a>尾插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">while (tail-&gt;next != nullptr) &#123;</span><br><span class="line">    tail = tail-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line">DoublyListNode* newNode = new DoublyListNode(xxx);</span><br><span class="line">tail-&gt;next = newNode;</span><br><span class="line">newNode-&gt;prev = tail;</span><br><span class="line">tail = newNode;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="中间插"><a href="#中间插" class="headerlink" title="中间插"></a>中间插</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 移动到要插入位置的前一个节点（前驱节点）</span><br><span class="line">for (int i = 0; i &lt; index - 1; i++) &#123;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">newNode-&gt;next = p-&gt;next;</span><br><span class="line">p-&gt;next-&gt;prev = newNode;</span><br><span class="line">p-&gt;next = newNode;</span><br><span class="line">newNode-&gt;prev = p;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="删除节点-1"><a href="#删除节点-1" class="headerlink" title="删除节点"></a>删除节点</h3><h4 id="删除头结点"><a href="#删除头结点" class="headerlink" title="删除头结点"></a>删除头结点</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DoublyListNode* toDelete = head;</span><br><span class="line">head = head-&gt;next;</span><br><span class="line">head-&gt;prev = nullptr;</span><br><span class="line"></span><br><span class="line">// 清理已删除节点的指针</span><br><span class="line">toDelete-&gt;next = nullptr;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除中间节点"><a href="#删除中间节点" class="headerlink" title="删除中间节点"></a>删除中间节点</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// 移动到要删除位置的前一个节点（前驱节点）</span><br><span class="line">for (int i = 0; i &lt; index - 1; i++) &#123;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 删除 p 的后一个节点</span><br><span class="line">p-&gt;next = p-&gt;next-&gt;next;</span><br><span class="line">p-&gt;next-&gt;prev = p;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="删除尾结点"><a href="#删除尾结点" class="headerlink" title="删除尾结点"></a>删除尾结点</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">DoublyListNode* p = head;</span><br><span class="line">// 找到尾结点</span><br><span class="line">while (p-&gt;next != nullptr) &#123;</span><br><span class="line">    p = p-&gt;next;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p-&gt;prev-&gt;next = nullptr;</span><br><span class="line">p-&gt;prev = nullptr;     //断开与前一个节点的连接</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>补：</p>
+<ul>
+<li>第三个节点后面插入，第三个节点是前驱节点</li>
+<li>第三个节点索引是2<br>使用<code>for (int i = 0; i &lt; 2; i++)</code>移动到第三个节点</li>
+</ul>
+<h1 id="栈的介绍"><a href="#栈的介绍" class="headerlink" title="栈的介绍"></a>栈的介绍</h1><p>栈只允许在栈顶插入元素，从栈顶删除元素。<br>所有操作时间复杂度都是 O(1)</p>
+<ul>
+<li>栈是<code>做什么 </code>的抽象定义</li>
+<li>链表&#x2F;数组是<code>怎么做</code>的具体实现</li>
+</ul>
+<p>&#x3D;&#x3D;栈不是一个数据结构，而是一种操作受限的线性表&#x3D;&#x3D;</p>
+<p><img src="/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/xw_20260204225503.png" alt="alt text"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">template &lt;typename E&gt;</span><br><span class="line">class MyStack &#123;</span><br><span class="line">public:</span><br><span class="line">    // 向栈顶插入元素</span><br><span class="line">    void push(const E&amp; e);</span><br><span class="line"></span><br><span class="line">    // 从栈顶删除元素</span><br><span class="line">    E pop();</span><br><span class="line"></span><br><span class="line">    // 查看栈顶元素</span><br><span class="line">    E peek() const;</span><br><span class="line"></span><br><span class="line">    // 返回栈中的元素个数</span><br><span class="line">    int size() const;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="用链表实现栈"><a href="#用链表实现栈" class="headerlink" title="用链表实现栈"></a>用链表实现栈</h2><h3 id="单链表头部作为栈顶"><a href="#单链表头部作为栈顶" class="headerlink" title="单链表头部作为栈顶"></a>单链表头部作为栈顶</h3><p>适用场景：仅需栈操作</p>
+<p>与栈的传统直观理解（新元素堆积在顶部）略有差异（新元素添加在链表头部）。<br>需维护的指针：head,next</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 入栈：头部添加元素</span><br><span class="line">void push(const E&amp; e) &#123;</span><br><span class="line">    Node* newNode = new Node(e);</span><br><span class="line">    if (head) &#123;</span><br><span class="line">        newNode-&gt;next = head;</span><br><span class="line">        head-&gt;prev = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    head = newNode; // 仅更新头指针</span><br><span class="line">    size++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="双链表尾部作为栈顶"><a href="#双链表尾部作为栈顶" class="headerlink" title="双链表尾部作为栈顶"></a>双链表尾部作为栈顶</h3><p>适用场景：需同时支持队列操作<br>需要注意：</p>
+<ul>
+<li>非空列情况，入队时只需要更新尾指针（空列情况需同时更新头指针）</li>
+<li>非空列情况，出队时只需要更新头指针（空列情况需同时更新尾指针）</li>
+<li>需维护的指针：head,tail,next,prev<br>需严格测试边界情况</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">// 入栈：尾部添加元素</span><br><span class="line">void push(const E&amp; e) &#123;</span><br><span class="line">    Node* newNode = new Node(e);</span><br><span class="line">    if (isEmpty()) &#123;</span><br><span class="line">        head = tail = newNode; // 同时更新头尾指针</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        tail-&gt;next = newNode;</span><br><span class="line">        newNode-&gt;prev = tail;</span><br><span class="line">        tail = newNode; // 仅更新尾指针</span><br><span class="line">    &#125;</span><br><span class="line">    size++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="双链表头部作为栈顶"><a href="#双链表头部作为栈顶" class="headerlink" title="双链表头部作为栈顶"></a>双链表头部作为栈顶</h3><p> 适用场景：仅需栈操作</p>
+<p> 仅需维护头指针（ head ），无需尾指针，代码逻辑更简单。<br> 与栈的传统直观理解（新元素堆积在顶部）略有差异（新元素添加在链表头部）。<br> 需维护的指针：head,next,prev</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">// 入栈：头部添加元素</span><br><span class="line">void push(const E&amp; e) &#123;</span><br><span class="line">    Node* newNode = new Node(e);</span><br><span class="line">    if (head) &#123;</span><br><span class="line">        newNode-&gt;next = head;</span><br><span class="line">        head-&gt;prev = newNode;</span><br><span class="line">    &#125;</span><br><span class="line">    head = newNode; // 仅更新头指针</span><br><span class="line">    size++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">template &lt;typename E&gt;</span><br><span class="line">class MyStack &#123;</span><br><span class="line">public:</span><br><span class="line">    // 向栈顶插入元素</span><br><span class="line">    void push(const E&amp; e);</span><br><span class="line"></span><br><span class="line">    // 从栈顶删除元素</span><br><span class="line">    E pop();</span><br><span class="line"></span><br><span class="line">    // 查看栈顶元素</span><br><span class="line">    E peek() const;</span><br><span class="line"></span><br><span class="line">    // 返回栈中的元素个数</span><br><span class="line">    int size() const;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="用数组实现栈"><a href="#用数组实现栈" class="headerlink" title="用数组实现栈"></a>用数组实现栈</h2><h1 id="队列介绍"><a href="#队列介绍" class="headerlink" title="队列介绍"></a>队列介绍</h1><p>队列只允许在队尾插入元素，在队头删除元素，<br>所有操作时间复杂度都是 O(1)</p>
+<p><img src="/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/xw_20260204225503.png" alt="alt text"></p>
+<ul>
+<li>队列是<code>做什么</code>的抽象定义</li>
+<li>链表&#x2F;数组是<code>怎么做</code>的具体实现</li>
+<li>队列是一种先进先出（FIFO）的数据结构</li>
+<li>队列的操作包括入队（enqueue）和出队（dequeue）</li>
+<li>队列的应用包括任务调度、缓冲区管理等</li>
+</ul>
+<p>队列只允许在队尾插入元素，在队头删除元素，<br>所有操作时间复杂度都是 O(1)</p>
+<p>补：在C++中队列的元素类型必须一致，在Python中队列的元素类型可以不一致。 </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">template &lt;typename E&gt;</span><br><span class="line">class MyQueue &#123;</span><br><span class="line">public:</span><br><span class="line">    // 向队尾插入元素</span><br><span class="line">    void push(const E&amp; e);</span><br><span class="line"></span><br><span class="line">    // 从队头删除元素</span><br><span class="line">    E pop();</span><br><span class="line"></span><br><span class="line">    // 查看队头元素</span><br><span class="line">    E peek() const;</span><br><span class="line"></span><br><span class="line">    // 返回队列中的元素个数 </span><br><span class="line">    int size() const;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<h2 id="循环队列"><a href="#循环队列" class="headerlink" title="循环队列"></a>循环队列</h2><p>内存连续，缓存友好</p>
+<p>没有内存分配开销</p>
+<p>内存使用更紧凑</p>
+<p>适合固定大小场景</p>
+<h2 id="数组队列（循环队列）"><a href="#数组队列（循环队列）" class="headerlink" title="数组队列（循环队列）"></a>数组队列（循环队列）</h2><p>数据量可预估</p>
+<p>需要高性能和缓存友好</p>
+<p>内存使用需要控制</p>
+<h2 id="链式队列"><a href="#链式队列" class="headerlink" title="链式队列"></a>链式队列</h2><p>数据量不可预测</p>
+<p>频繁插入删除</p>
+<p>内存碎片不是主要问题</p>
+<table>
+<thead>
+<tr>
+<th>特性</th>
+<th>链式队列</th>
+<th>循环队列</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>底层结构</td>
+<td>链表（节点+指针）</td>
+<td>循环数组</td>
+</tr>
+<tr>
+<td>内存分配</td>
+<td>动态（每个节点单独分配）</td>
+<td>静态&#x2F;动态（整块分配）</td>
+</tr>
+<tr>
+<td>内存连续性</td>
+<td>❌ 不连续</td>
+<td>✅ 连续</td>
+</tr>
+<tr>
+<td>指针开销</td>
+<td>✅ 有（每个节点）</td>
+<td>❌ 无</td>
+</tr>
+<tr>
+<td>缓存友好性</td>
+<td>❌ 差</td>
+<td>✅ 好</td>
+</tr>
+<tr>
+<td>空间利用率</td>
+<td>低（有指针开销）</td>
+<td>高（无额外开销）</td>
+</tr>
+<tr>
+<td>扩容方式</td>
+<td>自然扩展（新节点）</td>
+<td>需要重新分配</td>
+</tr>
+<tr>
+<td>访问方式</td>
+<td>必须从头遍历</td>
+<td>直接索引访问</td>
+</tr>
+<tr>
+<td>是否链式</td>
+<td>✅ 是</td>
+<td>❌ 不是</td>
+</tr>
+</tbody></table>
+
+    </div>
+    <footer class="article-footer">
+      
+      
+    </footer>
+  </div>
+    <nav id="article-nav" aria-label="Article navigation" data-aos="fade-up">
+      <div class="article-nav-link-wrap left">
+            <img data-src="/images/banner.webp" data-sizes="auto" alt="心得" class="lazyload">
+        <a href="/2026/02/03/10.%E5%BF%83%E5%BE%97/" aria-label="前一篇: 心得" title="前一篇: 心得"></a>
+        <div class="article-nav-caption">前一篇</div>
+        <h3 class="article-nav-title">
+            心得
+        </h3>
+      </div>
+    <div class="article-nav-link-wrap right">
+          <img data-src="/images/banner.webp" data-sizes="auto" alt="acwing3498" class="lazyload">
+      <a href="/2026/01/31/8.acwing3498/" aria-label="后一篇: acwing3498"  title="后一篇: acwing3498"></a>
+      <div class="article-nav-caption">后一篇</div>
+      <h3 class="article-nav-title">
+          acwing3498
+      </h3>
+    </div>
+  </nav>
+
+</article>
+
+
+</section>
+        </div>
+        <footer id="footer" aria-label="Site footer">
+  <div style="width: 100%; overflow: hidden">
+    <div class="footer-line"></div>
+  </div>
+  <div id="footer-info">
+    <div>
+      <span class="icon-copyright"></span>
+        2020-2026
+        <span class="footer-info-sep rotate"></span>
+      熄灭月亮陷入你
+    </div>
+      <div>
+        基于&nbsp;<a href="https://hexo.io/" rel="noopener nofollow noreferrer" target="_blank">Hexo</a>&nbsp;
+        Theme.<a href="https://github.com/D-Sketon/hexo-theme-reimu" rel="noopener nofollow noreferrer" target="_blank">Reimu</a>
+      </div>
+      <div>
+        <span class="icon-brush"></span>
+        5.8k
+        &nbsp;|&nbsp;
+        <span class="icon-coffee"></span>
+        00:34
+      </div>
+      <div>
+        <span class="icon-eye"></span>
+        <span id="busuanzi_container_site_pv">总访问量&nbsp;<span id="busuanzi_value_site_pv"></span></span>
+        &nbsp;|&nbsp;
+        <span class="icon-user"></span>
+        <span id="busuanzi_container_site_uv">总访客量&nbsp;<span id="busuanzi_value_site_uv"></span></span>
+      </div>
+  </div>
+</footer>
+
+          <div class="sidebar-top">
+            <div class="sidebar-top-taichi rotate"></div>
+            <div class="arrow-up"></div>
+          </div>
+        <div id="mask" class="hide"></div>
+      </div>
+      <nav id="mobile-nav" aria-label="Mobile navigation">
+  <div class="sidebar-wrap">
+        <div class="sidebar-toc-sidebar"><h3 class="toc-title">文章目录</h3>
+<div class="sidebar-toc-wrapper toc-div-class" >
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%93%BE%E8%A1%A8"><span class="toc-number">1.</span> <span class="toc-text">链表</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8"><span class="toc-number">1.1.</span> <span class="toc-text">单链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86"><span class="toc-number">1.1.1.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%8F%92"><span class="toc-number">1.1.2.</span> <span class="toc-text">头插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%8F%92"><span class="toc-number">1.1.3.</span> <span class="toc-text">尾插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.4.</span> <span class="toc-text">删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%EF%BC%9A%E5%9C%A8%E5%B0%BE%E9%83%A8%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9"><span class="toc-number">1.1.4.1.</span> <span class="toc-text">特殊：在尾部删除节点</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8"><span class="toc-number">1.2.</span> <span class="toc-text">双链表</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%81%8D%E5%8E%86-1"><span class="toc-number">1.2.1.</span> <span class="toc-text">遍历</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%B4%E6%8F%92-1"><span class="toc-number">1.2.2.</span> <span class="toc-text">头插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B0%BE%E6%8F%92-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">尾插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%AD%E9%97%B4%E6%8F%92"><span class="toc-number">1.2.4.</span> <span class="toc-text">中间插</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E8%8A%82%E7%82%B9-1"><span class="toc-number">1.2.5.</span> <span class="toc-text">删除节点</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%A4%B4%E7%BB%93%E7%82%B9"><span class="toc-number">1.2.5.1.</span> <span class="toc-text">删除头结点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E4%B8%AD%E9%97%B4%E8%8A%82%E7%82%B9"><span class="toc-number">1.2.5.2.</span> <span class="toc-text">删除中间节点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%B0%BE%E7%BB%93%E7%82%B9"><span class="toc-number">1.2.5.3.</span> <span class="toc-text">删除尾结点</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E7%9A%84%E4%BB%8B%E7%BB%8D"><span class="toc-number">2.</span> <span class="toc-text">栈的介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E9%93%BE%E8%A1%A8%E5%AE%9E%E7%8E%B0%E6%A0%88"><span class="toc-number">2.1.</span> <span class="toc-text">用链表实现栈</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E5%A4%B4%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.1.</span> <span class="toc-text">单链表头部作为栈顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%B0%BE%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.2.</span> <span class="toc-text">双链表尾部作为栈顶</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8C%E9%93%BE%E8%A1%A8%E5%A4%B4%E9%83%A8%E4%BD%9C%E4%B8%BA%E6%A0%88%E9%A1%B6"><span class="toc-number">2.1.3.</span> <span class="toc-text">双链表头部作为栈顶</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%94%A8%E6%95%B0%E7%BB%84%E5%AE%9E%E7%8E%B0%E6%A0%88"><span class="toc-number">2.2.</span> <span class="toc-text">用数组实现栈</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%98%9F%E5%88%97%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.</span> <span class="toc-text">队列介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97"><span class="toc-number">3.1.</span> <span class="toc-text">循环队列</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E9%98%9F%E5%88%97%EF%BC%88%E5%BE%AA%E7%8E%AF%E9%98%9F%E5%88%97%EF%BC%89"><span class="toc-number">3.2.</span> <span class="toc-text">数组队列（循环队列）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%93%BE%E5%BC%8F%E9%98%9F%E5%88%97"><span class="toc-number">3.3.</span> <span class="toc-text">链式队列</span></a></li></ol></li></ol>
+</div>
+</div>
+        <div class="sidebar-common-sidebar hidden"><div class="sidebar-author">
+  <img data-src="/avatar/avatar.webp" data-sizes="auto" alt="熄灭月亮陷入你" class="lazyload">
+  <div class="sidebar-author-name">熄灭月亮陷入你</div>
+  <div class="sidebar-description"></div>
+</div>
+<div class="sidebar-state">
+  <div class="sidebar-state-article">
+    <div>文章</div>
+    <div class="sidebar-state-number">11</div>
+  </div>
+  <div class="sidebar-state-category">
+    <div>分类</div>
+    <div class="sidebar-state-number">0</div>
+  </div>
+  <div class="sidebar-state-tag">
+    <div>标签</div>
+    <div class="sidebar-state-number">4</div>
+  </div>
+</div>
+<div class="sidebar-social" >
+</div>
+<div class="sidebar-menu">
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/" aria-label="首页"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">首页</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/archives" aria-label="归档"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">归档</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/about" aria-label="关于"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">关于</div>
+      </div>
+      <div class="sidebar-menu-link-wrap">
+        <a class="sidebar-menu-link-dummy" href="/friend" aria-label="友链"></a>
+          <div class="sidebar-menu-icon icon rotate">
+              &#xe62b;
+          </div>
+        <div class="sidebar-menu-link">友链</div>
+      </div>
+</div>
+</div>
+  </div>
+      <div class="sidebar-btn-wrapper">
+        <div class="sidebar-toc-btn current"></div>
+        <div class="sidebar-common-btn"></div>
+      </div>
+</nav>
+
+    </div>
+    
+<script src="https://npm.webcache.cn/lazysizes@5.3.2/lazysizes.min.js" integrity="sha384-3gT&#x2F;vsepWkfz&#x2F;ff7PpWNUeMzeWoH3cDhm&#x2F;A8jM7ouoAK0&#x2F;fP&#x2F;9bcHHR5kHq2nf+e" crossorigin="anonymous"></script>
+
+
+<script src="https://npm.webcache.cn/clipboard@2.0.11/dist/clipboard.min.js" integrity="sha384-J08i8An&#x2F;QeARD9ExYpvphB8BsyOj3Gh2TSh1aLINKO3L0cMSH2dN3E22zFoXEi0Q" crossorigin="anonymous"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+  
+<script src="/js/aos.js"></script>
+
+  <script>
+    var aosInit = () => {
+      AOS.init({
+        duration: 1000,
+        easing: "ease",
+        once: true,
+        offset: 50,
+      });
+    };
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', aosInit);
+    } else {
+      aosInit();
+    }
+  </script>
+
+
+<script src="/js/pjax_script.js" data-pjax></script>
+
+
+
+
+  <script>
+    var setupFirework = () => {
+      if (!false || !window.matchMedia('(max-width: 768px)').matches) {
+        window.firework && window.firework(JSON.parse('{"excludeElements":["a","button"],"particles":[{"shape":"circle","move":["emit"],"easing":"easeOutExpo","colors":["var(--red-1)","var(--red-2)","var(--red-3)","var(--red-4)"],"number":20,"duration":[1200,1800],"shapeOptions":{"radius":[16,32],"alpha":[0.3,0.5]}},{"shape":"circle","move":["diffuse"],"easing":"easeOutExpo","colors":["var(--red-0)"],"number":1,"duration":[1200,1800],"shapeOptions":{"radius":20,"alpha":[0.2,0.5],"lineWidth":6}}]}'));
+      }
+    }
+  </script>
+  
+<script src="https://npm.webcache.cn/mouse-firework@0.2.0/dist/index.umd.js" integrity="sha384-qi9WggRt19tv8Vc7pCHW3ulMNLwrn515zaLEWZjl1px07vz8+pUoWX8n1rgq282T" crossorigin="anonymous" onload="setupFirework()" defer></script>
+
+
+
+
+
+
+<div id="lazy-script">
+  <div>
+      
+      
+      <script data-pjax>
+        window.REIMU_POST = {
+          author: "熄灭月亮陷入你",
+          title: "链表栈队列",
+          url: "https://elasxny.github.io/2026/01/31/9.%E9%93%BE%E8%A1%A8%E6%A0%88%E9%98%9F%E5%88%97/",
+          excerpt: "",
+          description: "",
+          stripContent: "链表链表是一种物理存储结构上非连续存储结构，数据元素的逻辑顺序是通过链表中的指针链接次序实现的 。 因此无法使用下标访问链表中的元素，只能从前往后遍历链表。 单链表遍历123for (ListNode* p = head; p != nullptr; p = p-&amp;gt;next) &amp;#123;    std::cout &amp;lt;&amp;lt; p-&amp;gt;val &amp;lt;&amp;lt; std::endl;&amp;#125;  头插1234567// 创建一条单链表ListNode* head = create",
+          date: "Sat Jan 31 2026 16:54:52 GMT+0800",
+          updated: "Thu Feb 05 2026 19:43:58 GMT+0800",
+          cover: "/images/banner.webp",
+        };
+      </script>
+        
+<script src="/js/insert_highlight.js" data-pjax></script>
+
+      
+<script src="/js/tabs.js" data-pjax defer></script>
+
+      <script type="module" data-pjax>
+        (async () => {
+          const PhotoSwipeLightbox = (await safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe-lightbox.esm.min.js", "sha384-DiL6M/gG+wmTxmCRZyD1zee6lIhawn5TGvED0FOh7fXcN9B0aZ9dexSF/N6lrZi/")).default;
+          const initPswp = (gallery, children) => {
+            if (_$$(`${gallery} ${children}`).length > 0) {
+              new PhotoSwipeLightbox({
+                gallery,
+                children,
+                pswpModule: () => safeImport("https://npm.webcache.cn/photoswipe@5.4.4/dist/photoswipe.esm.min.js", "sha384-WkkO3GCmgkC3VQWpaV8DqhKJqpzpF9JoByxDmnV8+oTJ7m3DfYEWX1fu1scuS4+s")
+              }).init();
+            }
+          }
+          const pswp = () => {
+            initPswp('.article-entry', 'a.article-gallery-item');
+            initPswp('.article-gallery', 'a.article-gallery-item');
+          }
+          pswp();
+        })();
+      </script>
+        
+
+
+  </div>
+</div>
+
+
+  <script>
+    console.log(String.raw`%c 
+ ______     ______     __     __    __     __  __    
+/\  == \   /\  ___\   /\ \   /\ "-./  \   /\ \/\ \   
+\ \  __<   \ \  __\   \ \ \  \ \ \-./\ \  \ \ \_\ \  
+ \ \_\ \_\  \ \_____\  \ \_\  \ \_\ \ \_\  \ \_____\ 
+  \/_/ /_/   \/_____/   \/_/   \/_/  \/_/   \/_____/ 
+                                                  
+`,'color: #ff5252;')
+    console.log('%c Theme.Reimu v' + '1.12.0' + ' %c https://github.com/D-Sketon/hexo-theme-reimu ', 'color: white; background: #ff5252; padding:5px 0;', 'padding:4px;border:1px solid #ff5252;')
+  </script>
+  
+
+
+  
+<script src="https://npm.webcache.cn/busuanzi@2.3.0/bsz.pure.mini.js" integrity="sha384-0M75wtSkhjIInv4coYlaJU83+OypaRCIq2SukQVQX04eGTCBXJDuWAbJet56id+S" crossorigin="anonymous" async></script>
+
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then((registrations) => {
+      for (let registration of registrations) {
+        registration.unregister();
+      }
+    });
+  }
+</script>
+
+
+
+
+  </body>
+  </html>
